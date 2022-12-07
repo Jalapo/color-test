@@ -4,50 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- START PWA TAGS -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <link rel="apple-touch-icon" sizes="173x173" href="favicon.ico"> 
+    <meta name="theme-color" content="#db4938" />
+    <!-- END PWA TAGS -->
     <title>Color Tester</title>
-    <script type="text/javascript" src="script.js"></script>
-
-<style>
-    html {height: 100%; width: 100vw; font-size: 1.4rem;}
-    body {height: 100%; width: 100%; margin:0;}
-    #color {height: 100%; width:100vw; background-color: hsl(0,50%,50%);}
-    .buttons {
-        width: 80%;
-        height: 10%;
-        position: absolute;
-        top: 85%;
-        left: 10%;
-        background-color: hsl(0,0%,12%); 
-        border: 2px solid hsl(0,0%,2%);
-        border-radius: 1.2rem;
-        color: white;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        text-align: center;
-    }
-    .btn>input {
-        margin-bottom: 0.7rem;
-        width: 20vw;
-    }
-</style>
+    <script type="text/javascript" src="defer.js" defer></script>
+    <style>
+        html {height: 100%; width: 100vw; font-size: 1.4rem;}
+        body {height: 100%; width: 100%; margin:0; overflow:hidden;}
+        #color {height: 100%; width:100vw; background-color: hsl(0,50%,50%);}
+    </style>
 
 </head>
 <body>
     <div id="color"></div>
-    <div class="buttons">
-        <div class="btn">
-            <input type="range" min="0" max="360" value="0" class="slider">
-            <div>Hue: <span>0</span></div>
-        </div>
-        <div class="btn">
-            <input type="range" min="0" max="100" value="50" class="slider">
-            <div>Saturation: <span>50</span></div>
-        </div>
-        <div class="btn">
-            <input type="range" min="0" max="100" value="50" class="slider">
-            <div>Lightness: <span>50</span></div>
-        </div>
-    </div>
 </body>
 </html>

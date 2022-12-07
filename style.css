@@ -1,0 +1,99 @@
+@media screen and (orientation: portrait) {
+    body * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    body>.buttons {
+        top: 65%;
+        min-height: max(30vw,20vh);
+        padding-top: 5%;
+        align-items: flex-end;
+    }
+    .btn>input {
+        transform: rotate(-90deg)translateX(70%);
+        /* transform: translateY(-1rem); */
+    }
+    .btn>div {
+        align-self: flex-end;
+        transform: translateY(-100%);
+    }
+}
+@media (hover: hover) {
+    #swap_colorspace:hover {
+        background-color: hsl(0,0%,18%);
+    }
+}
+
+@keyframes shiftOut {
+    0% {left: 10%;}
+    100% {left: 110%;}
+}
+@keyframes shiftIn {
+    0% {left: -110%;}
+    100% {left: 10%;}
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes animateButton {
+    0% {
+        background-image: linear-gradient(135deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+        background-size: 400% 400%;
+        background-position: 100% 50%;
+    }
+    50% {background-position: 0% 50%;}
+    100% {background-position: 100% 50%;}
+}
+@media all and (display-mode: fullscreen) {
+    body *:not(#color) {animation: fadeIn 0.5s ease forwards;}
+}
+
+html {height: 100%; width: 100vw; font-size: 1.4rem;}
+body {height: 100%; width: 100%; margin:0; overflow:hidden;}
+#color {height: 100%; width:100vw; background-color: hsl(0,50%,50%);}
+.buttons {
+    width: 80%;
+    height: 10%;
+    position: absolute;
+    top: 85%;
+    background-color: hsl(0,0%,12%); 
+    border: 2px solid hsl(0,0%,2%);
+    border-radius: 1.2rem;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    text-align: center;
+    
+    
+    animation-name: none;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+#hsl{left:10%;}
+#rgb{left:-110%;}
+.btn>input {
+    margin-bottom: 0.7rem;
+    width: 20vw;
+}
+
+#swap_colorspace {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background-color: hsl(0,0%,12%);
+    border: 2px solid hsl(0,0%,2%);
+    color: gray;
+    font-size: 18px;
+    text-align: center;
+    padding: 0;
+}
